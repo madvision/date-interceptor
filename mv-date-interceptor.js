@@ -3,9 +3,9 @@
 angular.module('mv', []).service('DateInterceptor', function() {
 
     var toDate = function(d) {
-        var ms, match = d.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2})\:(\d{2})\:(\d{2})[+-](\d{2})\:(\d{2})$/);
+        var ms, match, regexIso8601 = /^(\d{4})-(\d{2})-(\d{2})T(\d{2})\:(\d{2})\:(\d{2})[+-](\d{2})\:(\d{2})$/;
 
-        if (typeof d === "string" && match && !isNaN(Date.parse(match[0])))
+        if (typeof d === "string" && (match = d.match(regexIso8601)) && !isNaN(Date.parse(match[0])))
             return new Date(Date.parse(match[0]));
 
         return undefined;
@@ -32,8 +32,8 @@ angular.module('mv', []).service('DateInterceptor', function() {
 
             if (typeof value !== 'undefined')
                 data[key] = value;
-            else if (typeof value === "object")
-                traverse(value, closure);
+            else if (typeof data[key] === "object")
+                traverse(data[key], closure);
         }
     };
 
