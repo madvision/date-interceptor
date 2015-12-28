@@ -1,0 +1,17 @@
+{
+  "name": "mv-date-interceptor",
+  "version": "0.1.0",
+  "homepage": "https://github.com/madvision/date-interceptor",
+  "authors": [
+    "Mad Vision <info@madvision.cz>"
+  ],
+  "main": "mv-date-interceptor.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
