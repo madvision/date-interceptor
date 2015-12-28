@@ -6,7 +6,7 @@ angular.module('mv').service('DateInterceptor', function() {
         var ms, match = d.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2})\:(\d{2})\:(\d{2})[+-](\d{2})\:(\d{2})$/);
 
         if (typeof d === "string" && match && !isNaN(Date.parse(match[0])))
-            return new Date(Date.parse(match[0]);
+            return new Date(Date.parse(match[0]));
 
         return undefined;
     };
